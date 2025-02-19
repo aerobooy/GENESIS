@@ -10,11 +10,13 @@
             background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
             color: #333;
             text-align: center;
-            padding: 100px;
+            padding: 40px;
+            margin: 0; /* Eliminar márgenes por defecto */
         }
         h1 {
             font-size: 3em;
             color: #ff4081;
+            margin-bottom: 20px;
         }
         .btn {
             background-color: #ff4081;
@@ -24,9 +26,25 @@
             border-radius: 5px;
             font-size: 1.2em;
             transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 20px;
         }
         .btn:hover {
             background-color: #f50057;
+        }
+
+        /* Ajuste para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
