@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            color: #333;
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #d81b60;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .btn-container div {
+            display: inline-block;
+        }
+        .btn {
+            background-color: #d81b60;
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #c2185b;
+            transform: translateY(-3px);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        #no-btn {
+            position: absolute;
+            transition: all 0.5s ease;
+        }
+
+        #message {
+            display: none;
+            margin-top: 30px;
+        }
+
+        #message h2 {
+            font-size: 2em;
+            color: #d81b60;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ajuste para pantallas más pequeñas */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            .btn {
+                padding: 12px 28px;
+                font-size: 1.1em;
+            }
+            #message h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Quieres ser mi novia?</h1>
+    <div class="btn-container">
+        <div><a href="#" id="yes-btn" class="btn">Sí</a></div>
+        <div><a href="#" id="no-btn" class="btn">No</a></div>
+    </div>
+
+    <div id="message">
+        <h2>¡Genial! <3 Estoy tan feliz de que quieras ser mi novia, Genesis. Eres increíble y cada día me haces sentir más afortunado de tenerte a mi lado. Te quiero💖</h2>
+    </div>
+    
+
+    <script>
+        const noBtn = document.getElementById("no-btn");
+        const yesBtn = document.getElementById("yes-btn");
+        const message = document.getElementById("message");
+    
+        // Cuando se hace clic en "Sí"
+        yesBtn.addEventListener("click", function() {
+            message.style.display = "block";  // Muestra el mensaje bonito
+            noBtn.style.display = "none";     // Oculta el botón "No"
+        });
+    
+        // Cuando se hace clic en "No"
+        noBtn.addEventListener("click", function() {
+            // Obtener el tamaño de la ventana (para pantallas más pequeñas)
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Establecer el rango para el movimiento en un área específica
+            const randomX = Math.floor(Math.random() * (screenWidth - 300) + 300); // Rango entre 300 y screenWidth
+            const randomY = Math.floor(Math.random() * (screenHeight - 100)); // Rango entre 0 y screenHeight (con un margen)
+
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
